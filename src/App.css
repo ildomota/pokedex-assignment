@@ -1,0 +1,75 @@
+.app {
+  min-height: 100vh;
+  background: #f3f4f6;
+}
+
+.navbar {
+  background: #ef4444;
+  color: white;
+  padding: 16px 32px;
+}
+
+.navbar h3 {
+  margin: 0 0 8px 0;
+}
+
+.navbar a {
+  color: white;
+  margin-right: 12px;
+  font-weight: bold;
+}
+
+.page {
+  padding: 32px;
+}
+
+.pokedex-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.pokemon-list {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  min-width: 220px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.pokemon-list li {
+  cursor: pointer;
+  padding: 6px;
+  text-transform: capitalize;
+}
+
+.pokemon-list li:hover {
+  background: #fee2e2;
+}
+
+.details-card {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  min-width: 260px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.details-card h3 {
+  text-transform: capitalize;
+}
+
+.details-card img {
+  width: 160px;
+  image-rendering: pixelated;
+}
+
+.pagination {
+  margin-top: 16px;
+}
+
+.pagination button {
+  margin-right: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
