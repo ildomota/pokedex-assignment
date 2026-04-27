@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react";
-import {
-  getPokemonPage,
-  getPokemonDetails,
-} from "../services/pokemonApi";
+import { getPokemonPage, getPokemonDetails } from "../services/pokemonApi";
 
 import PokemonList from "../components/PokemonList";
 import PokemonDetails from "../components/PokemonDetails";
@@ -28,11 +25,10 @@ function PokedexPage() {
   };
 
   return (
-  <main className="page">
-    <h2>Pokedex Page</h2>
+    <main className="page">
+      <aside className="sidebar">
+        <h2>Pokedex Page</h2>
 
-    <div className="pokedex-layout">
-      <div>
         <PokemonList pokemonList={pokemonList} onSelect={handleSelect} />
 
         <div className="pagination">
@@ -42,12 +38,11 @@ function PokedexPage() {
 
           <button onClick={() => setPage(page + 1)}>Next</button>
         </div>
-      </div>
+      </aside>
 
       <PokemonDetails pokemon={selectedPokemon} />
-    </div>
-  </main>
-);
+    </main>
+  );
 }
 
 export default PokedexPage;

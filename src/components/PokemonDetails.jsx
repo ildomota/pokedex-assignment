@@ -1,30 +1,37 @@
 function PokemonDetails({ pokemon }) {
-  if (!pokemon) return null;
+  if (!pokemon) return <p className="empty-details">Select a Pokémon</p>;
+
+  const image =
+    pokemon.sprites.other["official-artwork"].front_default ||
+    pokemon.sprites.front_default;
 
   return (
-    <div className="details-card">
-      <h3>{pokemon.name}</h3>
-      <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+    <section className="pokemon-showcase" key={pokemon.name}>
+      <div className="pokemon-image-side">
+        <img src={image} alt={pokemon.name} />
+      </div>
 
-      <p>Height: {pokemon.height}</p>
-      <p>Weight: {pokemon.weight}</p>
+      <div className="pokemon-info-side">
+        <div className="pokemon-info-content">
+          <h2>{pokemon.name}</h2>
 
-      <p>Types: {pokemon.types.map((t) => t.type.name).join(", ")}</p>
+          <p><strong>Height:</strong> {pokemon.height}</p>
+          <p><strong>Weight:</strong> {pokemon.weight}</p>
+          <p><strong>Types:</strong> {pokemon.types.map((t) => t.type.name).join(", ")}</p>
+          <p><strong>Abilities:</strong>{" "}{pokemon.abilities.map((a) => a.ability.name).join(", ")}
+          </p>
 
-      <p>
-        Abilities:{" "}
-        {pokemon.abilities.map((a) => a.ability.name).join(", ")}
-      </p>
-
-      <h4>Stats</h4>
-      <ul>
-        {pokemon.stats.map((s) => (
-          <li key={s.stat.name}>
-            {s.stat.name}: {s.base_stat}
-          </li>
-        ))}
-      </ul>
-    </div>
+          <h3>Stats</h3>
+          <ul>
+            {pokemon.stats.map((s) => (
+              <li key={s.stat.name}>
+                {s.stat.name}: {s.base_stat}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
   );
 }
 
