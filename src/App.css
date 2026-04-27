@@ -122,18 +122,13 @@ body {
 }
 
 .pokemon-info-content {
-  width: 380px;
-  transform: translateX(120px);
+  width: min(380px, 80%);
+  transform: translateX(40px);
   margin-left: 0;
 }
 
 .pokemon-info-content h2 {
-  font-size: clamp(42px, 4vw, 64px);
-  font-weight: 800;
-  letter-spacing: 2px;
-  margin-top: 0;
-  margin-bottom: 30px;
-  text-transform: uppercase;
+  font-size: clamp(36px, 3.5vw, 64px);
   white-space: nowrap;
 }
 
